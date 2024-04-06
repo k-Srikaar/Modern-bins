@@ -5,9 +5,11 @@ const userRouter = require("./Routers/userRouter.js");
 const gsmRouter = require("./Routers/gsmRouter.js");
 const viewRouter = require("./Routers/viewRouter.js");
 const cookieParser = require("cookie-parser");
+const compression = require("compression");
 // starts express
 app.use(express.json());
 app.use(cookieParser());
+app.use(compression());
 
 app.set("view engine", "pug");
 
