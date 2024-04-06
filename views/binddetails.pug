@@ -1,0 +1,23 @@
+extend base
+
+block content 
+    //- // Sidebar
+    //- #mySidebar.sidebar
+    //-     a.sidebar-close(href="javascript:void(0)", onclick="closeNav()") &times;
+    //-     a(href='/binddetails/Bin1') Activitiy 1
+    //-     a(href="#section2") Activitiy 2
+    //-     a(href="#section3") Activitiy 3
+
+    // Main Container
+    .main-container
+        .left-container
+            iframe.frame(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7562.635231269952!2d73.87539699999998!3d18.6047786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c7173beb8cc7%3A0xcf82a5185d4ab3ec!2sCricket%20Ground!5e0!3m2!1sen!2sin!4v1712049433334!5m2!1sen!2sin" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade")
+        .right-container
+            .bin
+                div.full(style="height:"+ `${bin.persentagefill}` +"%;")
+
+                
+            .info
+                p percentage filled : #{bin.persentagefill}
+                p location : #{bin.coordinates[0]} #{bin.coordinates[1]} 
+

@@ -1,0 +1,15 @@
+.navbar
+    // Menu Button 
+    span(style="font-size: 30px; cursor: pointer; margin-right: 10px", onclick="openNav()") &#9776;
+    a.active(href="/") Home
+    a(href="#news") News
+    a(href="#contact") Contact
+    a(href="#about") About
+    a(href="/feedback") Feedback
+    .navbar-right
+        if user
+            span #{user.name}
+            a(href="/index" id  = 'logout') Logout
+        else
+            a(href="/login") Login
+            a(href="/signup") Signup
