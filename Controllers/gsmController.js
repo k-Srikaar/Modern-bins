@@ -62,6 +62,8 @@ exports.getAllBins = async (req, res) => {
   try {
     const newBin = await GSM.find();
     // console.log(newBin);
+    // req.bins = newBin;
+    // res.locals.bins = newBin;
     if (!newBin) {
       res.status(400).json({ message: "BIN IS NOT PRESENT" });
       return;
@@ -70,6 +72,24 @@ exports.getAllBins = async (req, res) => {
     res.status(201).json({ message: "Sucess", newBin });
   } catch (err) {
     res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+exports.getAllBinsContent = async (req, res, next) => {
+  try {
+    const newBin = await GSM.find();
+    // console.log(newBin);
+    req.bins = newBin;
+    res.locals.bins = newBin;
+    // if (!newBin) {
+    //   res.status(400).json({ message: "BIN IS NOT PRESENT" });
+    //   return;
+    // }
+    next();
+    // res.status(201).json({ message: "Sucess", newBin });
+  } catch (err) {
+    next();
+    // res.status(500).json({ message: "Internal Server Error" });
   }
 };
 

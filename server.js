@@ -9,7 +9,7 @@ mongoose.connect(DB).then(() => {
   console.log("Database connected SuccessFully !!");
 });
 
-let port = 8001;
+let port = process.env.PORT;
 // app.use((req, res, next) => {
 //   console.log("sfdsfasdf");
 //   next();

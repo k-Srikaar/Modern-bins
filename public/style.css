@@ -89,12 +89,15 @@ footer {
   color: white;
   line-height: 1px;
   margin-top: 4vh;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 .details {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   /* padding-block: 1vh; */
   color: white;
   line-height: 1px;

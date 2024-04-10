@@ -24,7 +24,7 @@ exports.signup = (req, res, next) => {
 };
 
 exports.binstatus = async (req, res, next) => {
-  const bins = await GMS.find();
+  // const bins = await GMS.find();
   res.render("binddetails", {
     title: "Bin status",
   });
@@ -39,5 +39,11 @@ exports.feedback = (req, res, next) => {
 exports.index = (req, res, next) => {
   res.render("index", {
     title: "Overview",
+  });
+};
+
+exports.alert = (req, res, next) => {
+  res.render("alert", {
+    title: "Alert",
   });
 };

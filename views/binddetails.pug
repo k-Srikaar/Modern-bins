@@ -1,12 +1,12 @@
 extend base
 
 block content 
-    //- // Sidebar
-    //- #mySidebar.sidebar
-    //-     a.sidebar-close(href="javascript:void(0)", onclick="closeNav()") &times;
-    //-     a(href='/binddetails/Bin1') Activitiy 1
-    //-     a(href="#section2") Activitiy 2
-    //-     a(href="#section3") Activitiy 3
+    // Sidebar
+    #mySidebar.sidebar
+        a.sidebar-close(href="javascript:void(0)", onclick="closeNav()") &times;
+        h1(style = "color : white;") BINS
+        each bin in bins
+            a(href='/binddetails/'+`${bin.Bin}`)  #{bin.Bin} 
 
     // Main Container
     .main-container
@@ -20,4 +20,21 @@ block content
             .info
                 p percentage filled : #{bin.persentagefill}
                 p location : #{bin.coordinates[0]} #{bin.coordinates[1]} 
+    //- h1 Map with Latitude and Longitude
+    //-     div#map
+    //-     script.
+    //-     function initMap() {
+    //-         var latitude = #{bin.coordinates[0]}; // Dynamic latitude value from backend
+    //-         var longitude = #{bin.coordinates[1]}; // Dynamic longitude value from backend
 
+    //-         var map = new google.maps.Map(document.getElementById('map'), {
+    //-         center: {lat: latitude, lng: longitude},
+    //-         zoom: 8
+    //-         });
+
+    //-         var marker = new google.maps.Marker({
+    //-         position: {lat: latitude, lng: longitude},
+    //-         map: map,
+    //-         title: 'Location'
+    //-         });
+    //-     }
