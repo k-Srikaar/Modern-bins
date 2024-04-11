@@ -160,3 +160,7 @@ footer {
 #contact {
   margin-top: 12vh;
 }
+#map {
+  height: 400px;
+  width: auto;
+}
