@@ -1,7 +1,7 @@
 document
   .getElementById("logout")
   .addEventListener("click", async function (event) {
-    event.preventDefault();
+    // event.preventDefault();
 
     // localStorage.removeItem("token");
 
